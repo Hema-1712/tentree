@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-function Login() {
+function Blog() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration
@@ -15,6 +15,44 @@ function Login() {
     });
   }, []);
 
+  const downloads = [
+    { name: "Product Catalog", file: "/files/catalog.pdf" },
+    { name: "Installation Manual", file: "/files/installation-manual.pdf" },
+    { name: "Warranty Policy", file: "/files/warranty.pdf" },
+    { name: "AMC Service Plans", file: "/files/amc-plans.pdf" }
+  ];
+const services = [
+    {
+      title: "HVAC Product Supply",
+      desc: "Wholesale and retail supply of air conditioners, compressors, ducting materials, thermostats, and spare parts.",
+      icon: "❄️",
+    },
+    {
+      title: "Installation & Setup",
+      desc: "Professional installation services for residential, commercial, and industrial HVAC systems.",
+      icon: "🛠️",
+    },
+    {
+      title: "Maintenance & Repair",
+      desc: "Routine servicing, breakdown repair, gas refilling, and component replacements.",
+      icon: "🔧",
+    },
+    {
+      title: "Custom HVAC Solutions",
+      desc: "Tailored solutions for factories, warehouses, data centers, and high-demand environments.",
+      icon: "🏭",
+    },
+    {
+      title: "Energy Efficiency Upgrades",
+      desc: "Upgrade your old systems to high-efficiency HVAC units to reduce energy bills.",
+      icon: "⚡",
+    },
+    {
+      title: "AMC & Annual Contracts",
+      desc: "Affordable Annual Maintenance Contracts (AMC) for long-term peace of mind.",
+      icon: "📅",
+    },
+  ];
  return (
       <>
         {/* Navbar */}
@@ -112,6 +150,124 @@ function Login() {
 </nav>
 
 
+    <section className="py-5 bg-white">
+      <div className="container text-center">
+        <h2 className="fw-bold mb-4">Our Services</h2>
+        <p className="text-muted mb-5">
+          From supply to installation – we provide complete HVAC solutions for homes, offices, and industries.
+        </p>
+
+        <div className="row">
+          {services.map((service, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="p-4 border rounded shadow-sm h-100">
+                <div className="display-5 mb-3">{service.icon}</div>
+                <h5 className="fw-bold">{service.title}</h5>
+                <p className="text-muted">{service.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+<section className="py-5">
+      <div className="container">
+        <div className="row align-items-center">
+          
+          {/* Image */}
+          <div className="col-md-6 mb-4">
+            <img
+              src={icon}
+              alt="Our Story"
+              className="img-fluid rounded shadow" style={{borderRadius:'16px'}}
+            />
+          </div>
+
+          {/* Story Text */}
+          <div className="col-md-6">
+            <h2 className="fw-bold">Our Story</h2>
+            <p>
+              Every great company begins with a purpose — ours started with a simple vision:
+              to make quality HVAC solutions accessible to everyone.
+            </p>
+            <p>
+              What started as a small warehouse with just a few tools and air conditioning units
+              has now grown into a trusted hub for homeowners, contractors, and industries.
+            </p>
+            <p>
+              From day one, our commitment has remained the same — provide honest service,
+              reliable products, and fast delivery at fair prices.
+            </p>
+            <h5 className="fw-bold mt-3">And this is only the beginning.</h5>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  
+
+    <section className="py-5 bg-white">
+      <div className="container">
+
+        {/* Download Center */}
+        <h2 className="fw-bold text-center mb-4">Download Center</h2>
+        <p className="text-muted text-center mb-4">Access manuals, catalogs, and important documents instantly.</p>
+        <div className="row mb-5">
+          {downloads.map((item, idx) => (
+            <div className="col-md-3 mb-3" key={idx}>
+              <div className="p-3 border rounded shadow-sm text-center">
+                📄 <strong>{item.name}</strong>
+                <br />
+                <a href={item.file} download className="btn btn-sm btn-outline-primary mt-2">Download</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Support Ticket Form */}
+        <h2 className="fw-bold text-center mb-4">Raise a Support Ticket</h2>
+        <p className="text-muted text-center mb-4">Facing an issue with a product or service? Let us know below.</p>
+
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <form className="p-4 bg-light border rounded shadow-sm">
+              <div className="mb-3">
+                <label className="form-label">Full Name</label>
+                <input type="text" className="form-control" placeholder="Enter your name" />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Email Address</label>
+                <input type="email" className="form-control" placeholder="Enter your email" />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Issue Type</label>
+                <select className="form-select">
+                  <option>Product Defect</option>
+                  <option>Delayed Delivery</option>
+                  <option>Installation Support</option>
+                  <option>AMC/Service Request</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Message</label>
+                <textarea className="form-control" rows="4" placeholder="Describe your issue"></textarea>
+              </div>
+
+              <button type="submit" className="btn btn-primary w-100">Submit Ticket</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
     {/* Footer */}
         <footer>
           <div className="footer-content p-4 d-flex justify-content-around flex-wrap"data-aos="slide-right">
@@ -181,5 +337,5 @@ function Login() {
     );
   }
   
-  export default Login;
+  export default Blog;
   

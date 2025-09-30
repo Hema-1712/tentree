@@ -1,7 +1,7 @@
 {
   "name": "shop",
   "private": true,
-  "homepage": "https://github.com/Hema-1712/tentree/",
+  "homepage": "https://github.com/Hema-1712/ventify/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,8 +9,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist"
+    
   },
   "dependencies": {
     "aos": "^2.3.4",

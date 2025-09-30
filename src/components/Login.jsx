@@ -2,6 +2,7 @@ import React, { useEffect , useState} from 'react';
 import '../assets/style/style.css';
 import icon from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -111,7 +112,70 @@ function Login() {
   </div>
 </nav>
 
+<Container fluid className="vh-100 d-flex justify-content-center align-items-center">
+      <Row className="shadow p-4 bg-white rounded w-100" style={{ maxWidth: "900px" }}>
+        
+        {/* Left Side */}
+        <Col xs={12} md={6} className="d-flex flex-column justify-content-center mb-4 mb-md-0">
+          <h2 className="text-center mb-3">Log In Ventify</h2>
+          <p className="text-center">
+            Don’t have an account? <Link to="/signin">Sign Up</Link>
+          </p>
 
+          <Form>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter your email" />
+            </Form.Group>
+
+            <div className="d-flex justify-content-between mb-3">
+              <a href="#">Forgot Email?</a>
+            </div>
+
+            <Button
+              variant="primary"
+              type="submit"
+              className="w-100 mb-3"
+              style={{ borderRadius: "25px" }}
+            >
+              Continue with Email →
+            </Button>
+          </Form>
+        </Col>
+
+        {/* Divider - visible only on medium+ screens */}
+        <Col md={1} className="d-none d-md-flex align-items-center justify-content-center">
+          <div className="border-end h-100"></div>
+        </Col>
+
+        {/* Right Side */}
+        <Col xs={12} md={5} className="d-flex flex-column justify-content-center">
+          <Button variant="light" className="mb-3 border d-flex align-items-center justify-content-center">
+            <img src="https://img.icons8.com/color/24/google-logo.png" alt="Google" className="me-2" />
+            Continue with Google
+          </Button>
+
+          <Button variant="primary" className="mb-3 d-flex align-items-center justify-content-center">
+            <img src="https://img.icons8.com/fluency/24/facebook-new.png" alt="Facebook" className="me-2" />
+            Continue with Facebook
+          </Button>
+
+          <Button variant="light" className="mb-3 border d-flex align-items-center justify-content-center">
+            <img src="https://img.icons8.com/ios-filled/24/mac-os.png" alt="Apple" className="me-2" />
+            Continue with Apple
+          </Button>
+
+          <a href="#" className="text-center">
+            Continue with SSO
+          </a>
+        </Col>
+      </Row>
+
+      {/* Footer */}
+      <div className="position-absolute bottom-0 mb-3 text-center">
+        <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+      </div>
+    </Container>
     {/* Footer */}
         <footer>
           <div className="footer-content p-4 d-flex justify-content-around flex-wrap"data-aos="slide-right">

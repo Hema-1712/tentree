@@ -7,13 +7,35 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-function Contact() {
+function Sup() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration
       once: true,     // animation only once
     });
   }, []);
+  const faqs = [
+    {
+      q: "Do you provide installation services?",
+      a: "Yes! We offer professional installation support for residential, commercial, and industrial HVAC systems."
+    },
+    {
+      q: "How can I track my order?",
+      a: "Once your order is shipped, we provide a tracking link via email or WhatsApp for real-time status updates."
+    },
+    {
+      q: "Do you offer Annual Maintenance Contracts (AMC)?",
+      a: "Absolutely. We provide AMC plans for all types of HVAC systems to ensure long-term performance."
+    },
+    {
+      q: "Can I get bulk discounts for contractor or business orders?",
+      a: "Yes, we offer special pricing and priority delivery for dealers, HVAC contractors, and corporate clients."
+    },
+    {
+      q: "Which brands do you supply?",
+      a: "We deal with leading HVAC brands including Daikin, LG, Blue Star, Voltas, Hitachi, and more."
+    }
+  ];
 
  return (
       <>
@@ -111,75 +133,66 @@ function Contact() {
   </div>
 </nav>
 
- <section className="py-5  mt-5 mb-5">
-      <div className="container">
-        <h2 className="fw-bold text-center mb-4">Contact Us</h2>
-        <p className="text-center mb-5">
-          Have a question or need assistance? We’re here to help! Reach out to us using the form below.
+<section className="py-5 bg-white">
+      <div className="container text-center">
+        <h2 className="fw-bold mb-4">Help & Support</h2>
+        <p className="text-muted mb-5">
+          We're always ready to assist you with product guidance, service requests, or technical queries.
         </p>
 
-        <div className="row g-4">
-          
-          {/* Contact Form */}
-          <div className="col-md-6">
-            <form className="p-4 bg-white shadow rounded">
-              <div className="mb-3">
-                <label className="form-label">Full Name</label>
-                <input type="text" className="form-control" placeholder="Enter your name" />
+        <div className="row">
+          {[
+            { icon: "📞", title: "Technical Support", desc: "Product installation guidance and troubleshooting assistance." },
+            { icon: "🛠️", title: "Service & AMC", desc: "Repairs, gas refilling, maintenance contracts, and more." },
+            { icon: "🚚", title: "Order & Delivery", desc: "Shipping status, replacements, and tracking updates." },
+            { icon: "💬", title: "Live Chat / WhatsApp", desc: "Instant support via WhatsApp or direct chat." }
+          ].map((item, idx) => (
+            <div className="col-md-3 mb-4" key={idx}>
+              <div className="p-4 border rounded shadow-sm h-100">
+                <div className="display-5 mb-3">{item.icon}</div>
+                <h5 className="fw-bold">{item.title}</h5>
+                <p className="text-muted">{item.desc}</p>
               </div>
-
-              <div className="mb-3">
-                <label className="form-label">Email Address</label>
-                <input type="email" className="form-control" placeholder="Enter your email" />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label">Phone Number</label>
-                <input type="tel" className="form-control" placeholder="Enter your phone number" />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label">Message</label>
-                <textarea className="form-control" rows="4" placeholder="Write your message"></textarea>
-              </div>
-
-              <button type="submit" className="btn btn-primary w-100">Send Message</button>
-            </form>
-          </div>
-
-          {/* Map + Contact Info */}
-          <div className="col-md-6">
-            <div className="p-4 bg-white shadow rounded mb-4">
-              <h5 className="fw-bold">📍 Our Location</h5>
-              <div className="ratio ratio-16x9 mb-3">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4692079388835!2d-73.935242!3d40.730610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU4JzAyLjIiTiA3M8KwNTYnMDQuOSJX!5e0!3m2!1sen!2sin!4v123456789"
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>
-
-              <h5 className="fw-bold">📞 Phone</h5>
-              <p>+91-9442482810 / +91-7010589619</p>
-
-              <h5 className="fw-bold">✉️ Email</h5>
-              <p>support@ventify.com</p>
-
-              <h5 className="fw-bold">⏰ Working Hours</h5>
-              <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
-
-              {/* WhatsApp Button */}
-              <a
-                href="https://wa.me/919442482810"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-success w-100 mt-3"
-              >
-                💬 Chat on WhatsApp
-              </a>
             </div>
-          </div>
+          ))}
+        </div>
 
+        {/* CTA Buttons */}
+        <div className="mt-4">
+          <a href="tel:+919442482810" className="btn btn-primary me-3">📞 Call Support</a>
+          <a href="https://wa.me/919442482810" target="_blank" rel="noopener noreferrer" className="btn btn-success">💬 WhatsApp Support</a>
+        </div>
+      </div>
+    </section>
+
+
+  
+    <section className="py-5 bg-light">
+      <div className="container">
+        <h2 className="fw-bold text-center mb-4">Frequently Asked Questions (FAQ)</h2>
+        <div className="accordion" id="faqAccordion">
+          {faqs.map((item, idx) => (
+            <div className="accordion-item mb-2" key={idx}>
+              <h2 className="accordion-header" id={`heading${idx}`}>
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={`#collapse${idx}`}
+                  aria-expanded="false"
+                >
+                  {item.q}
+                </button>
+              </h2>
+              <div
+                id={`collapse${idx}`}
+                className="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div className="accordion-body">{item.a}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -252,5 +265,5 @@ function Contact() {
     );
   }
   
-  export default Contact;
+  export default Sup;
   

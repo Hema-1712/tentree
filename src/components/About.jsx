@@ -2,12 +2,14 @@ import React, { useEffect , useState} from 'react';
 import '../assets/style/style.css';
 import icon from '../assets/images/logo.png';
 import { Link } from 'react-router-dom';
+import image1 from '../assets/images/a1.jpg';
+import icon1 from '../assets/images/a.jpg';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-function Login() {
+function About() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animation duration
@@ -110,8 +112,130 @@ function Login() {
     </div>
   </div>
 </nav>
+<div className="container mt-5 mb-5">
+  <img src={icon1} alt="hvac image" className='img-fluid' style={{borderRadius:'16px'}}/>
+</div>
+ <section className="py-5 bg-light">
+      <div className="container">
+        <div className="row align-items-center">
+          
+          {/* Image Side (You can replace the URL with your own image) */}
+          <div className="col-md-6 mb-4 mb-md-0">
+            <img
+              src={image1}
+              alt="HVAC System"
+              className="img-fluid rounded shadow"
+            />
+          </div>
+
+          {/* Content Side */}
+          <div className="col-md-6">
+            <h2 className="fw-bold">About Us</h2>
+            <p className="text-dark">
+              At <strong>Ventify</strong>, we specialize in providing
+              high-quality Heating, Ventilation, and Air Conditioning (HVAC) products
+              and solutions for both residential and commercial needs. With years of
+              industry expertise, we are committed to delivering durable equipment,
+              energy-efficient systems, and exceptional customer support.
+            </p>
+            <ul className="list-unstyled">
+              <li>✅ Certified Products & Trusted Brands</li>
+              <li>✅ Expert Technical Guidance</li>
+              <li>✅ Bulk & Retail Supply Options</li>
+              <li>✅ Custom HVAC Solutions for Contractors & Businesses</li>
+              <li>✅ Fast Shipping and Hassle-Free Support</li>
+            </ul>
+            <p className="text-muted">
+              Whether you're an HVAC professional, contractor, or DIY enthusiast,
+              we’re here to help you find the right solution at the right price.
+            </p>
+            <h5 className="fw-bold mt-3">
+              VENTIFY– Powering Comfort. Delivering Reliability.
+            </h5>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
 
+    <div className="container mt-5 mb-5">
+        
+        <h2 className="fw-bold mb-4">Our Vision & Mission</h2>
+        
+        <div className="row">
+          {/* Vision */}
+          <div className="col-md-6 mb-4">
+            <div className="p-4 border rounded shadow-sm">
+              <h4 className="fw-bold">Our Vision</h4>
+              <p className="mb-0">
+                To be the most trusted and innovative HVAC solutions provider, delivering 
+                comfort, efficiency, and sustainability to every home and business across the globe.
+              </p>
+            </div>
+          </div>
+
+          {/* Mission */}
+          <div className="col-md-6 mb-4">
+            <div className="p-4 border rounded shadow-sm">
+              <h4 className="fw-bold">Our Mission</h4>
+              <ul className="list-unstyled">
+                <li> Supply premium-quality HVAC equipment and accessories.</li>
+                <li> Empower customers with expert guidance and support.</li>
+                <li> Promote energy-efficient and eco-friendly climate solutions.</li>
+                <li> Deliver value through reliable service and long-term partnerships.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <section className="py-5 bg-light">
+      <div className="container">
+
+        {/* Core Values */}
+        <h2 className="fw-bold text-center mb-4">Our Core Values</h2>
+        <div className="row mb-5">
+          {[
+            "Integrity – We operate with honesty and transparency.",
+            "Innovation – We stay ahead with modern HVAC technology.",
+            "Reliability – We ensure consistent supply & performance.",
+            "Customer-Centric Approach – Your comfort is our priority.",
+            "Sustainability – We promote eco-friendly solutions."
+          ].map((value, idx) => (
+            <div key={idx} className="col-md-4 mb-3">
+              <div className="p-3 border rounded shadow-sm bg-white">
+                {value}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Why Choose Us */}
+        <h2 className="fw-bold text-center mb-4">Why Choose Us?</h2>
+        <ul className="list-group mb-5">
+          <li className="list-group-item">Over 10+ years of industry expertise</li>
+          <li className="list-group-item">ISO-certified products from leading brands</li>
+          <li className="list-group-item">Bulk & retail supply options for contractors & individuals</li>
+          <li className="list-group-item">Technical assistance & installation support</li>
+          <li className="list-group-item">Fast nationwide delivery & after-sales support</li>
+        </ul>
+
+        {/* Customer Support */}
+        <h2 className="fw-bold text-center mb-4">Customer Support Commitment</h2>
+        <p className="text-center mb-5">
+          Our expert team assists with product selection, installation guidance, warranty help, bulk orders, and more.
+        </p>
+
+        {/* Dealer Partnership */}
+        <h2 className="fw-bold text-center mb-4">Become a Dealer / Contractor Partner</h2>
+        <p className="text-center">
+          Register with us and enjoy trade discounts, priority processing, and dedicated support.
+        </p>
+
+      </div>
+    </section>
     {/* Footer */}
         <footer>
           <div className="footer-content p-4 d-flex justify-content-around flex-wrap"data-aos="slide-right">
@@ -181,5 +305,5 @@ function Login() {
     );
   }
   
-  export default Login;
+  export default About;
   

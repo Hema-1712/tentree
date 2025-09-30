@@ -34,7 +34,7 @@ function App() {
 
   return (
     <HashRouter>
-           <div style={{ backgroundColor: '#75757aff'}}>
+           <div style={{ backgroundColor: '#ebebf1ff'}}>
 
       <Routes>
         <Route path="/Login" element={<Login/>} />
